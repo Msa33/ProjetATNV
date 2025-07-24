@@ -176,166 +176,155 @@ export default function Reservation() {
           <h1 className="text-3xl font-bold text-center mb-6 text-black">
         Formulaire de réservation
       </h1>
-      <form onSubmit={handleSubmit} className="max-w-4xl max-h-full mx-auto p-8">
-        {/* Nom, Email, Téléphone */}
-        <div className="grid md:grid-cols-2 gap-3">
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Nom complet"
-            className="p-2 border rounded w-2xl"
-            required
-          /> <br />
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Email"
-            className="p-2 border rounded w-82 "
-            required
-          /> 
-          <input
-            type="tel"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            placeholder="Téléphone"
-            className="p-2 border rounded w-82"
-            required
-          /> 
-        </div>
+      <form onSubmit={handleSubmit} className="max-w-4xl mx-auto p-8 bg-white rounded shadow-lg">
 
-        {/* Salle, Date, Heure début/fin */}
-        <div className="grid md:grid-cols-4 gap-4 mt-4">
-         
+  {/* Nom, Email, Téléphone */}
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <input
+      type="text"
+      name="name"
+      value={formData.name}
+      onChange={handleChange}
+      placeholder="Nom complet"
+      className="p-2 border rounded w-full"
+      required
+    />
+    <input
+      type="email"
+      name="email"
+      value={formData.email}
+      onChange={handleChange}
+      placeholder="Email"
+      className="p-2 border rounded w-full"
+      required
+    />
+    <input
+      type="tel"
+      name="phone"
+      value={formData.phone}
+      onChange={handleChange}
+      placeholder="Téléphone"
+      className="p-2 border rounded w-full"
+      required
+    />
+  </div>
+
+  {/* Salle, Date, Heure début/fin */}
+  <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 mt-6">
+    <input
+      type="date"
+      name="date"
+      value={formData.date}
+      onChange={handleChange}
+      className="p-2 border rounded w-full"
+      required
+    />
+    <input
+      type="time"
+      name="startTime"
+      value={formData.startTime}
+      onChange={handleChange}
+      className="p-2 border rounded w-full"
+      required
+    />
+    <input
+      type="time"
+      name="endTime"
+      value={formData.endTime}
+      onChange={handleChange}
+      className="p-2 border rounded w-full"
+      required
+    />
+    <input
+      type="text"
+      name="room"
+      placeholder="Salle"
+      value={formData.room}
+      onChange={handleChange}
+      className="p-2 border rounded w-full"
+      required
+    />
+  </div>
+
+  {/* Motif */}
+  <div className="mt-6">
+    <textarea
+      name="reason"
+      value={formData.reason}
+      onChange={handleChange}
+      placeholder="Motif de la réservation"
+      className="p-2 border rounded w-full"
+      rows={3}
+      required
+    />
+  </div>
+
+  {/* Organisation */}
+  <div className="mt-6">
+    <label className="font-medium block mb-2">Type d'organisation :</label>
+    <div className="flex flex-wrap gap-4">
+      {['association', 'ONG', 'groupe', 'autres'].map((type) => (
+        <label key={type} className="flex items-center space-x-2">
           <input
-            type="date"
-            name="date"
-            value={formData.date}
+            type="checkbox"
+            name="organizationType"
+            value={type}
+            checked={formData.organizationType.includes(type)}
             onChange={handleChange}
-            className="p-2 border rounded"
-            required
           />
+          <span>{type}</span>
+        </label>
+      ))}
+    </div>
+    {formData.organizationType.includes('autres') && (
+      <input
+        type="text"
+        name="otherOrganization"
+        value={formData.otherOrganization}
+        onChange={handleChange}
+        placeholder="Précisez l'organisation"
+        className="mt-2 p-2 border rounded w-full md:w-auto"
+      />
+    )}
+  </div>
+
+  {/* Matériel */}
+  <div className="mt-6">
+    <label className="font-medium block mb-2">Matériel nécessaire :</label>
+    <div className="flex flex-wrap gap-4">
+      {['projecteur', 'sono', 'micro', 'autres'].map((mat) => (
+        <label key={mat} className="flex items-center space-x-2">
           <input
-            type="time"
-            name="startTime"
-            value={formData.startTime}
+            type="checkbox"
+            name="requiredMaterial"
+            value={mat}
+            checked={formData.requiredMaterial.includes(mat)}
             onChange={handleChange}
-            className="p-2 border rounded"
-            required
           />
-          <input
-            type="time"
-            name="endTime"
-            value={formData.endTime}
-            onChange={handleChange}
-            className="p-2 border rounded"
-            required
-          />
-        </div>
+          <span>{mat}</span>
+        </label>
+      ))}
+    </div>
+    {formData.requiredMaterial.includes('autres') && (
+      <input
+        type="text"
+        name="otherMaterial"
+        value={formData.otherMaterial}
+        onChange={handleChange}
+        placeholder="Précisez le matériel"
+        className="mt-2 p-2 border rounded w-full md:w-auto"
+      />
+    )}
+  </div>
 
-        {/* Motif */}
-        <div className="mt-4">
-          <textarea
-            name="reason"
-            value={formData.reason}
-            onChange={handleChange}
-            placeholder="Motif de la réservation"
-            className="p-2 border rounded w-2xl"
-            rows={3}
-            required
-          />
-        </div>
-
-        {/* Organisation */}
-        <div className="mt-4">
-          <label className="font-medium">Type d'organisation :</label>
-          <div className="flex flex-wrap gap-4 mt-2">
-            {['association', 'ONG', 'groupe'].map((type) => (
-              <label key={type} className="flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  name="organizationType"
-                  value={type}
-                  checked={formData.organizationType.includes(type)}
-                  onChange={handleChange}
-                />
-                <span>{type}</span>
-              </label>
-            ))}
-            <label className="flex items-center space-x-2">
-              <input
-                type="checkbox"
-                name="organizationType"
-                value="autres"
-                checked={formData.organizationType.includes('autres')}
-                onChange={handleChange}
-              />
-              <span>Autres</span>
-            </label>
-            {formData.organizationType.includes('autres') && (
-              <input
-                type="text"
-                name="otherOrganization"
-                value={formData.otherOrganization}
-                onChange={handleChange}
-                placeholder="Précisez l'organisation"
-                className="p-2 border rounded w-full md:w-auto"
-              />
-            )}
-          </div>
-        </div>
-
-        {/* Matériel */}
-        <div className="mt-4">
-          <label className="font-medium">Matériel nécessaire :</label>
-          <div className="flex flex-wrap gap-4 mt-2">
-            {['projecteur', 'sono', 'micro'].map((mat) => (
-              <label key={mat} className="flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  name="requiredMaterial"
-                  value={mat}
-                  checked={formData.requiredMaterial.includes(mat)}
-                  onChange={handleChange}
-                />
-                <span>{mat}</span>
-              </label>
-            ))}
-            <label className="flex items-center space-x-2">
-              <input
-                type="checkbox"
-                name="requiredMaterial"
-                value="autres"
-                checked={formData.requiredMaterial.includes('autres')}
-                onChange={handleChange}
-              />
-              <span>Autres</span>
-            </label>
-            {formData.requiredMaterial.includes('autres') && (
-              <input
-                type="text"
-                name="otherMaterial"
-                value={formData.otherMaterial}
-                onChange={handleChange}
-                placeholder="Précisez le matériel"
-                className="p-2 border rounded w-full md:w-auto"
-              />
-            )}
-          </div>
-        </div>
-
-        {/* Bouton de soumission */}
-        <button
-          type="submit"
-          className="mt-6 bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700"
-        >
-          Envoyer la réservation
-        </button>
-      </form>
+  {/* Bouton de soumission */}
+  <button
+    type="submit"
+    className="mt-8 bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700 w-full md:w-auto"
+  >
+    Envoyer la réservation
+  </button>
+</form>
 
       {/* Modal de confirmation ou erreur */}
       {showModal && (

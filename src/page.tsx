@@ -11,7 +11,7 @@ export default function Home() {
   const reunionAccueil = "/src/assets/reunionAccueil.jpg"
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white sticky top-0 z-10">
       {/* Header */}
       <header className="bg-white shadow-sm relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
