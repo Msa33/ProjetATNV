@@ -8,6 +8,7 @@ import { Facebook, Linkedin, Twitter } from 'lucide-react';
 export default function ActualitesPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const articles = [
     {
@@ -94,17 +95,76 @@ export default function ActualitesPage() {
               <Link to="/about" className="text-gray-700 hover:text-blue-600 transition-colors">À propos</Link>
               <Link to="/actions" className="text-gray-700 hover:text-blue-600 transition-colors">Actions</Link>
               <Link to="/actualites" className="text-blue-600 font-semibold">Actualités</Link>
-              <Link to="/evenements" className="text-gray-700 hover:text-blue-600 transition-colors">Réservation</Link>
+              <Link to="/salles" className="text-gray-700 hover:text-blue-600 transition-colors">Réservation</Link>
               <Link to="/don" className="text-gray-700 hover:text-blue-600 transition-colors">Faire un don</Link>
               <Link to="/contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</Link>
             </nav>
             <div className="md:hidden">
-              <button className="text-gray-700 hover:text-blue-600">
-                <i className="ri-menu-line w-6 h-6 flex items-center justify-center"></i>
+              <button 
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="text-gray-700 hover:text-green-600 cursor-pointer"
+              >
+                <i className={`${isMenuOpen ? 'ri-close-line' : 'ri-menu-line'} w-6 h-6 flex items-center justify-center`}>☰</i>
               </button>
             </div>
           </div>
         </div>
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t z-50">
+            <nav className="px-4 py-4">
+              <Link 
+                to="/" 
+                className="block py-3 px-4 text-gray-700 hover:text-green-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Accueil
+              </Link>
+              <Link 
+                to="/about" 
+                className="block py-3 px-4 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors cursor-pointer"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                À propos
+              </Link>
+              <Link 
+                to="/actions" 
+                className="block py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Actions
+              </Link>
+              <Link 
+                to="/actualites" 
+                className="block py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Actualités
+              </Link>
+              <Link 
+                to="/evenements" 
+                className="block py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Événements
+              </Link>
+              <Link 
+                to="/don" 
+                className="block py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Faire un don
+              </Link>
+              <Link 
+                to="/contact" 
+                className="block py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* Hero Section */}
@@ -267,7 +327,7 @@ export default function ActualitesPage() {
                 <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors cursor-pointer">À propos</Link></li>
                 <li><Link to="/actions" className="text-gray-400 hover:text-white transition-colors cursor-pointer">Actions</Link></li>
                 <li><Link to="/actualites" className="text-gray-400 hover:text-white transition-colors cursor-pointer">Actualités</Link></li>
-                <li><Link to="/evenements" className="text-gray-400 hover:text-white transition-colors cursor-pointer">Événements</Link></li>
+                <li><Link to="/salles" className="text-gray-400 hover:text-white transition-colors cursor-pointer">Réservation</Link></li>
               </ul>
             </div>
             <div>

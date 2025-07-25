@@ -14,7 +14,7 @@ function RoomPage() {
       name: "Amphi 800",
       capacity: 800,
       description: "Notre amphithéâtre principal, idéal pour les grandes conférences, les séminaires et les événements d'envergure. Équipé d'un système de sonorisation et de projection de pointe.",
-      image: "https://placehold.co/600x400/ADD8E6/000000?text=Amphi+500"
+      image: "https://placehold.co/600x400/ADD8E6/000000?text=Amphi+800"
     },
     {
       id: 2,

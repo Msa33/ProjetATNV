@@ -11,7 +11,7 @@ export default function Home() {
   const reunionAccueil = "/src/assets/reunionAccueil.jpg"
 
   return (
-    <div className="min-h-screen bg-white sticky top-0 z-10">
+    <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="bg-white shadow-sm relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,7 +33,7 @@ export default function Home() {
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-gray-700 hover:text-green-600 cursor-pointer"
               >
-                <i className={`${isMenuOpen ? 'ri-close-line' : 'ri-menu-line'} w-6 h-6 flex items-center justify-center`}></i>
+                <i className={`${isMenuOpen ? 'ri-close-line' : 'ri-menu-line'} w-6 h-6 flex items-center justify-center`}>☰</i>
               </button>
             </div>
           </div>

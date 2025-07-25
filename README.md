@@ -1,69 +1,26 @@
-# React + TypeScript + Vite
+# 1. Présentation du Projet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Le projet consiste à concevoir et développer un site web moderne, responsive et accessible pour l’Association Tchadienne pour la Non-Violence (ATNV), créée en 1992 et basée à Moundou, Tchad. L’association œuvre pour la promotion de la paix, la non-violence, la justice sociale et le dialogue dans la société tchadienne.
 
-Currently, two official plugins are available:
+L’objectif principal est d’améliorer la visibilité de l’ATNV sur le web, d’informer efficacement ses différents publics, de faciliter le contact et la mobilisation, tout en modernisant l’image numérique de l’association.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 2. Choix Techniques
 
-## Expanding the ESLint configuration
+    Frontend : React.js avec Vite, pour un développement rapide, modulaire et performant.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+    Styles : Tailwind CSS, pour un design moderne, responsive et une facilité de personnalisation.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+    Backend : serveur web (Netlify) pour la gestion des contenus dynamiques et de deployement flexible et aussi facile à connecter avec le depôt GitHub
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+    Outils de design : Maquettes réalisées avec Figma par sa flexibilité de collaborer avec des camarades 
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+    Versioning : Git + GitHub pour le suivi du développement.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Le choix de React + Tailwind CSS est motivé par leur popularité, leur maintenabilité, et leur capacité à produire des interfaces modernes et performantes, avec un rendu mobile-first et auusi avec la possibilité de créer des composants réutilisables.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# 3. Capture d'écran du site 
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+![alt text](<Capture d’écran du 2025-07-25 19-46-55.png>)
+![alt text](<Capture d’écran du 2025-07-25 19-47-05.png>)
+![alt text](<Capture d’écran du 2025-07-25 19-47-17.png>)
+![alt text](<Capture d’écran du 2025-07-25 19-47-24.png>)
