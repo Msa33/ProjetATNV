@@ -96,13 +96,13 @@ export default function Reservation() {
               <img className='h-30 w-30' src={LogoATNV}/>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors">Accueil</Link>
-              <Link to="/about" className="text-gray-700 hover:text-blue-600 transition-colors">À propos</Link>
-              <Link to="/actions" className="text-gray-700 hover:text-blue-600 transition-colors">Actions</Link>
-              <Link to="/actualites" className="text-gray-700 hover:text-blue-600 transition-colors">Actualités</Link>
-              <Link to="/salles" className="text-gray-700 hover:text-blue-600 transition-colors">Réservation</Link>
-              <Link to="/don" className="text-gray-700 hover:text-blue-600 transition-colors">Faire un don</Link>
-              <Link to="/contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</Link>
+              <Link to="/" className="text-gray-700 hover:text-green-600 transition-colors">Accueil</Link>
+              <Link to="/about" className="text-gray-700 hover:text-green-600 transition-colors">À propos</Link>
+              <Link to="/actions" className="text-gray-700 hover:text-green-600 transition-colors">Actions</Link>
+              <Link to="/actualites" className="text-gray-700 hover:text-green-600 transition-colors">Actualités</Link>
+              <Link to="/salles" className="text-gray-700 hover:text-green-600 transition-colors">Réservation</Link>
+              <Link to="/don" className="text-gray-700 hover:text-green-600 transition-colors">Faire un don</Link>
+              <Link to="/contact" className="text-gray-700 hover:text-green-600 transition-colors">Contact</Link>
             </nav>
             <div className="md:hidden">
               <button 
@@ -135,35 +135,35 @@ export default function Reservation() {
               </Link>
               <Link 
                 to="/actions" 
-                className="block py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
+                className="block py-3 px-4 text-gray-700 hover:text-green-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Actions
               </Link>
               <Link 
                 to="/actualites" 
-                className="block py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
+                className="block py-3 px-4 text-gray-700 hover:text-green-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Actualités
               </Link>
               <Link 
                 to="/evenements" 
-                className="block py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
+                className="block py-3 px-4 text-gray-700 hover:text-green-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Événements
               </Link>
               <Link 
                 to="/don" 
-                className="block py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
+                className="block py-3 px-4 text-gray-700 hover:text-green-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Faire un don
               </Link>
               <Link 
                 to="/contact" 
-                className="block py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
+                className="block py-3 px-4 text-gray-700 hover:text-green-600 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact

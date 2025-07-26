@@ -17,13 +17,13 @@ export default function Header() {
             </Link>
           </div>
           <nav className="hidden md:flex space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors">Accueil</Link>
+            <Link to="/" className="text-gray-700 hover:text-green-600 transition-colors">Accueil</Link>
             <Link to="/about" className="text-blue-600 font-semibold">À propos</Link>
-            <Link to="/actions" className="text-gray-700 hover:text-blue-600 transition-colors">Actions</Link>
-            <Link to="/actualites" className="text-gray-700 hover:text-blue-600 transition-colors">Actualités</Link>
-            <Link to="/reservation" className="text-gray-700 hover:text-blue-600 transition-colors">Réservation</Link>
-            <Link to="/don" className="text-gray-700 hover:text-blue-600 transition-colors">Faire un don</Link>
-            <Link to="/contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</Link>
+            <Link to="/actions" className="text-gray-700 hover:text-green-600 transition-colors">Actions</Link>
+            <Link to="/actualites" className="text-gray-700 hover:text-green-600 transition-colors">Actualités</Link>
+            <Link to="/reservation" className="text-gray-700 hover:text-green-600 transition-colors">Réservation</Link>
+            <Link to="/don" className="text-gray-700 hover:text-green-600 transition-colors">Faire un don</Link>
+            <Link to="/contact" className="text-gray-700 hover:text-green-600 transition-colors">Contact</Link>
           </nav>
           <div className="md:hidden">
             <button 
